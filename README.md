@@ -29,7 +29,7 @@
 
 ## Άρθρο και ζωντανό παράδειγμα
 
-Το `demo-analytics.php` παρουσιάζει το άρθρο «Αυτοσχέδιο Analytics με PHP και JavaScript» ως απλή σελίδα PHP με HTML. Φορτώνει το `content-9.php` και το `content-9.js`, καταγράφει την επίσκεψη και τα clicks. Βρίσκεται αποκλειστικά σε αυτό το project. Το CMS δεν φορτώνει πλέον Analytics.
+Το `demo-analytics.php` παρουσιάζει το άρθρο «Αυτοσχέδιο Analytics με PHP και JavaScript» ως απλή σελίδα PHP με HTML. Φορτώνει μόνο τα υπάρχοντα `content-9.php` και `content-9.js`, χωρίς πρόσθετο inline script. Καταγράφει clicks· δεν στέλνει ξεχωριστό συμβάν επίσκεψης. Βρίσκεται αποκλειστικά σε αυτό το project.
 
 Το `analytics.csv` περιλαμβάνει 27 συνθετικές εγγραφές για όλες τις κατηγορίες: `request`, `click`, `warning`, `error`, `notice`, `correct`, `licence`, `ai_provider` και `ai_model`. Για τις έτοιμες εγγραφές επιλέξτε στις αναφορές το διάστημα 20 έως 22 Οκτωβρίου 2026. Οι IP, χώρες, browsers και γλώσσες είναι ενδεικτικά.
 
