@@ -1,0 +1,51 @@
+<?php
+include_once $_SERVER["DOCUMENT_ROOT"] . "/common/content-9.php";
+?>
+<!DOCTYPE html>
+<html lang="el">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Αυτοσχέδιο Analytics με PHP και JavaScript</title>
+    <script defer src="/common/content-9.js"></script>
+    <script>
+        window.addEventListener('DOMContentLoaded', async () => {
+            const pageUrl = new URL(location.href);
+            pageUrl.search = '';
+            pageUrl.hash = '';
+            try {
+                const response = await fetch('/common/content-9.php', {
+                    method: 'POST',
+                    body: new URLSearchParams({ type: 'request', location: pageUrl.href, referrer: document.referrer }),
+                    credentials: 'omit',
+                    cache: 'no-store',
+                    keepalive: true
+                });
+                if (!response.ok) throw new Error('HTTP ' + response.status);
+            } catch (error) {
+                console.error('Analytics: αποτυχία καταγραφής επίσκεψης | message=' + error.message);
+            }
+        });
+    </script>
+</head>
+<body>
+<main>
+<h1>Αυτοσχέδιο Analytics με PHP και JavaScript</h1>
+<p>Ένα δικό μου εργαλείο για να βλέπω τις επισκέψεις, τα clicks και τα μηνύματα που αφήνει πίσω της μια εφαρμογή.</p>
+<p>Μια ιστοσελίδα συνεχίζει τη ζωή της όταν τελειώσεις τον κώδικα. Κάποιος την ανοίγει, πατά έναν σύνδεσμο, δοκιμάζει μια λειτουργία. Ή συναντά ένα μήνυμα που εσύ δεν βλέπεις εκείνη τη στιγμή.</p>
+<p>Το δικό μου Analytics είναι ένα project γύρω από αυτή την περιέργεια: τι συμβαίνει μέσα στην εφαρμογή όταν χρησιμοποιείται;</p>
+<h2>Ένα μικρό παρατηρητήριο</h2>
+<p>Η κατασκευή συγκεντρώνει επισκέψεις, clicks και ειδοποιήσεις. Πληροφορίες, προειδοποιήσεις, επιτυχίες και σφάλματα αποκτούν θέση στις αναφορές. Έτσι μπορείς να εξερευνήσεις περισσότερα από έναν συνολικό αριθμό επισκέψεων.</p>
+<p>Υπάρχουν φίλτρα και διαφορετικές όψεις των δεδομένων. Μπορείς να εστιάσεις σε μια σελίδα ή μια περίοδο και να δεις τι έχει καταγραφεί.</p>
+<h2>Το δικό μου εργαλείο, μέσα στη δική μου εφαρμογή</h2>
+<p>Το project χρησιμοποιεί PHP και JavaScript και κρατά τις καταγραφές σε CSV. Μου αρέσει αυτή η απλή βάση: ένα αρχείο πίσω από έναν πίνακα που μπορείς να εξελίξεις σύμφωνα με τις ανάγκες της εφαρμογής σου.</p>
+<p>Η συλλογή υποστηρίζει και πιο ειδικά συμβάντα, όπως επιλογές μοντέλων AI ή άδειες χρήσης, όταν συνδεθεί με τις αντίστοιχες λειτουργίες.</p>
+<h2>Περιέργεια που γίνεται κατασκευή</h2>
+<p>Ένα click από μόνο του δεν λέει όλη την ιστορία. Είναι όμως ένα μικρό ίχνος που μπορείς να εξετάσεις μαζί με τα υπόλοιπα.</p>
+<p>Αυτό είναι το πνεύμα του εργαλείου: ένα προσωπικό εργαστήριο παρατήρησης. Το demo περιλαμβάνει φανταστικές καταγραφές για να παρουσιάζει την ιδέα, μαζί με κουμπιά που παράγουν νέα συμβάντα. Μπορείς να δεις το μικρό σύστημα να αποκτά κίνηση μπροστά σου!</p>
+<p><a href="/common/content-9.php">Αναφορές Analytics</a></p>
+<button type="button">Ένα click στο δικό μου Analytics</button>
+</main>
+</body>
+</html>
+
