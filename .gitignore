@@ -1,0 +1,8 @@
+analytics.csv
+cache/
+users/
+users.json
+.env
+.env.*
+rclone.conf
+*.log
